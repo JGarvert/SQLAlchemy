@@ -20,8 +20,9 @@ Don't forget to close out the session!
 Create an app to show off the results!  This includes fundamental understanding of Flask and JSON to create an API.
 
 A. Create a homepage with all available routes
+
 B. Using JSON:
-    * Create dictionary using `date` as the key and `prcp` as the values
-    * Create a list of stations
-    * Create a ist of temperature observations (TOBS) for the most recent year.
-    * Create a list of min, max, and avg temp for a given start or stop date range.  Note to graders and users, dates will need to be manually enetered into the URL.  The date range will not be prompted. When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date. When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.
+* Create dictionary using `date` as the key and `prcp` as the values
+* Create a list of stations
+* Create a ist of temperature observations (TOBS) for the most recent year.
+* Create a list of min, max, and avg temp for a given start or stop date range.  Note to graders and users, dates will need to be manually enetered into the URL.  The date range will not be prompted. When given the start only, calculate `TMIN`, `TAVG`, and `TMAX` for all dates greater than and equal to the start date. When given the start and the end date, calculate the `TMIN`, `TAVG`, and `TMAX` for dates between the start and end date inclusive.

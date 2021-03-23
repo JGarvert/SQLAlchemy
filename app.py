@@ -11,15 +11,15 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 ## Setup DB
-engine = create_engine("sqlite:///../resources/hawaii.sqlite")
+engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 ## Reflect Database into ORM classes
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 Base.classes.keys()
 
-# Measurement = Base.classes.measurement
-# Station = Base.classes.station
+Measurement = Base.classes.measurement
+Station = Base.classes.station
 
 @app.route('/')
 def home():
@@ -43,9 +43,9 @@ def precipitation():
     prc_date_query = session.query(Measurement.date, Measurement.prcp).order_by(Measurement.date).all()
     
     ## Convert query to dictionary
-    prcp_date_list = [{"Date":"Precipitation (inches)"}]
+    prc_date_list = [{"Date":"Precipitation (inches)"}]
 
-    for date, prcp in prcp_date_query:
+    for date, prcp in prc_date_query:
         prc_date_dict = {}
         prc_date_dict[date] = prcp
         prc_date_list.append(prc_date_dict)
@@ -89,7 +89,7 @@ def tobs():
     temp_query = session.query(Measurement.date, Measurement.tobs).\
                     filter(Measurement.date >= prev_year_date_formatted).\
                     order_by(Measurement.date).all()
-
+    print(temp_query)
     ## Convert query to dictionary
     tobs_date_list = [{"Date":"Temperature (F)"}]
 
